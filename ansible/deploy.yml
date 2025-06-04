@@ -1,0 +1,14 @@
+---
+- name: Deploy to tomcat
+  hosts: web
+  become: yes
+  tasks:
+   - name: Copy war File
+     copy:
+      src: "/var/snap/jenkins/4870/workspace/MAWA/target/MAWA.war"
+      dest: "/opt/tomcat/webapps/MAWA.war"
+      remote_src: no
+   - name: Restart tomcat
+     systemd:
+      name: tomcat
+      state: restarted
