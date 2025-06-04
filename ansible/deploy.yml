@@ -5,8 +5,8 @@
   tasks:
    - name: Copy war File
      copy:
-      src: "/var/snap/jenkins/4870/workspace/MAWA/target/MAWA.war"
-      dest: "/opt/tomcat/webapps/MAWA.war"
+      src: "/var/snap/jenkins/4870/workspace/MAWA/target/meowansible.war"
+      dest: "/opt/tomcat/webapps/meowansible.war"
       remote_src: no
    - name: Restart tomcat
      systemd:
